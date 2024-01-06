@@ -17,11 +17,11 @@ jobs:
     strategy:
       matrix:
         include:
-          - image: 1337kavin/piped:hotspot
+          - image: sudoling/pipe:hotspot
             dockerfile: ./Dockerfile.ci
-          - image: 1337kavin/piped:latest,1337kavin/piped:azul-zulu
+          - image: sudoling/pipe:latest,sudoling/pipe:azul-zulu
             dockerfile: ./Dockerfile.azul.ci
-          - image: 1337kavin/piped:graalvm-jvm
+          - image: sudoling/pipe:graalvm-jvm
             dockerfile: ./Dockerfile.graalvm-jvm.ci
     steps:
       - uses: actions/checkout@v4
