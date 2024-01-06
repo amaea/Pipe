@@ -58,15 +58,10 @@ public class Main {
         // Find country code, used for georestricted videos
         Thread.ofVirtual().start(() -> {
             try {
-                var html = RequestUtils.sendGet("https://www.youtube.com/").get();
-                var regex = Pattern.compile("GL\":\"([A-Z]{2})\"", Pattern.MULTILINE);
-                var matcher = regex.matcher(html);
-                if (matcher.find()) {
-                    YOUTUBE_COUNTRY = matcher.group(1);
-                }
+                YOUTUBE_COUNTRY = "US";
             } catch (Exception ignored) {
-                System.err.println("Failed to get country from YouTube!");
-            }
+                YOUTUBE_COUNTRY = "US";
+            }            
         });
 
         Sentry.init(options -> {
