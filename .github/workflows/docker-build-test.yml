@@ -25,7 +25,6 @@ jobs:
         dockerfile:
           - Dockerfile.ci
           - Dockerfile.azul.ci
-          - Dockerfile.openj9.ci
           - Dockerfile.graalvm-jvm.ci
         include:
           - sleep: 20
